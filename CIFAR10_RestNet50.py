@@ -42,7 +42,7 @@ net = ResNet50(10)
 if torch.cuda.device_count() > 1:
     print("Let's use", torch.cuda.device_count(), "GPUs!")
   # dim = 0 [30, xxx] -> [10, ...], [10, ...], [10, ...] on 3 GPUs
-    net = nn.DataParallel(net)
+    #net = nn.DataParallel(net)
 net.to(device)
 #net = nn.DataParallel(ResNet50(10),gpu_ids=[0,1])
 criterion = nn.CrossEntropyLoss()
